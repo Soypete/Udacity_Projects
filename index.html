@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+  <style>
+  p {
+    color: red;
+    margin: 5px;
+    cursor: pointer;
+  }
+  p:hover {
+    background: yellow;
+  }
+   table{ 
+    border-collapse: separate;
+    border: 2px thin black;
+    margin: 0 auto;
+}
+
+tr {
+    height: 20px;
+}
+
+td {
+    width: 20px;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<p>Grid Height:
+        <input type="number" id="inputHeight" name="height" min="1" value=""></p>
+       <p> Grid Width:
+        <input type="number" id="inputWidth" name="width" min="1" value=""></p>
+<input type="submit" id="submit">
+
+ 
+<script>
+var height, width;
+$("#inputHeight").on('keyup',function(){
+    height = $(this).val();
+    console.log(height);
+});
+
+$('#inputWidth').on('keyup',function(){
+    width = $('#inputWidth').val();
+    console.log(width);
+});
+
+$( "#submit" ).on('click',function() {
+    var body = document.getElementsByTagName('body')[0];
+    var tbl = document.createElement('table');
+    console.log(height);
+    console.log(width);
+   // tbl.style.width = '400px';
+    // tbl.style.height = '400px';
+     tbl.setAttribute('border', '2px thin black');
+    var tbdy = document.createElement('tbody');
+    for (var i = 0; i < height; i++) {
+        var tr = document.createElement('tr');
+        for (var j = 0; j < width; j++) {
+            // if (i == 2 && j == 1) {
+            //     break
+            // } else {
+                var td = document.createElement('td');
+                // td.appendChild(document.createTextNode('\u0020'))
+                // i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+                tr.appendChild(td)
+            // }
+        }
+        tbdy.appendChild(tr);
+    }
+    tbl.appendChild(tbdy);
+    body.appendChild(tbl)
+});
+</script>
+ 
+</body>
+</html>

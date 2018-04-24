@@ -1,0 +1,20 @@
+.fact{
+	font-style: italic;
+}
+.label{
+	font-weight: bold;
+}
+#card{
+	border: 1px solid #888888;
+    padding: 10px;
+    box-shadow: 5px 10px #E4DDDB;
+    width: 304px;
+}
+#info{
+	border: 1px solid #888888;
+}img{
+	width: 300px;
+}ul{
+	list-style: none;
+	padding-left: 0;
+}
